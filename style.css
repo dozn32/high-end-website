@@ -190,3 +190,67 @@ footer {
   text-align: center;
   color: var(--text-secondary);
 }
+/* FIX EMBED FULL */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* HERO FIT EMBED */
+.hero {
+  height: 100vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CENTER CONTENT CHUẨN */
+.hero-content {
+  top: auto;
+  transform: translateY(0);
+  padding: 0 20px;
+}
+
+/* TEXT SCALE THEO MÀN */
+.hero h2 {
+  font-size: clamp(32px, 5vw, 60px);
+}
+
+.hero p {
+  font-size: clamp(14px, 2vw, 20px);
+}
+
+/* SECTION FIT */
+.section {
+  padding: 80px 5%;
+}
+
+/* GALLERY AUTO FIT */
+.gallery {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* CARD KHÔNG BỊ MÉO */
+.card img {
+  height: 200px;
+}
+
+/* MODAL FIT EMBED */
+.modal-content img {
+  object-fit: contain;
+  max-height: 90vh;
+}
+
+/* FIX TEXT OVERFLOW */
+.modal-info {
+  max-width: 90%;
+}
+
+/* TRÁNH BỊ NHỎ TRONG IFRAME */
+body {
+  min-width: 320px;
+}
