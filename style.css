@@ -254,3 +254,27 @@ html, body {
 body {
   min-width: 320px;
 }
+// AUTO DETECT EMBED + SCALE SMART
+function autoScaleEmbed() {
+  const isIframe = window.self !== window.top;
+
+  if (!isIframe) return; // không phải embed thì bỏ qua
+
+  const baseWidth = 1440; // width chuẩn thiết kế
+  const screenWidth = window.innerWidth;
+
+  let scale = screenWidth / baseWidth;
+
+  // Giới hạn scale (tránh quá to / quá nhỏ)
+  scale = Math.max(0.75, Math.min(scale, 1.1));
+
+  document.body.style.transform = `scale(${scale})`;
+  document.body.style.transformOrigin = "top center";
+
+  // FIX chiều cao để không bị cắt
+  document.body.style.height = (100 / scale) + "vh";
+}
+
+// chạy
+window.addEventListener("load", autoScaleEmbed);
+window.addEventListener("resize", autoScaleEmbed);
