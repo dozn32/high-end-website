@@ -39,8 +39,3 @@ function fixScale() {
 
 window.addEventListener("resize", fixScale);
 fixScale();
-/* CHỐNG LỆCH KHI SCALE */
-body {
-  margin: 0 auto;
-  max-width: 1440px;
-}
