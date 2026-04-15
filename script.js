@@ -26,3 +26,16 @@ btn.onclick = () => {
 
   btn.textContent = mode === 'light' ? '☀️' : '🌙';
 };
+// AUTO SCALE KHI EMBED
+function fixScale() {
+  const width = window.innerWidth;
+
+  if (width < 900) {
+    document.body.style.zoom = "0.9";
+  } else {
+    document.body.style.zoom = "1";
+  }
+}
+
+window.addEventListener("resize", fixScale);
+fixScale();
